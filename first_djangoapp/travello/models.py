@@ -1,10 +1,11 @@
 from django.db import models
 
 # Create your models here.
-class destination:
-    id : int
-    name: str
-    image: str
-    des: str
-    price: int
-    offer: bool
+class destination(models.Model):
+   
+    name =  models.CharField(max_length=200)
+    image = models.ImageField(upload_to='pics')
+    des = models.TextField()
+    price = models.IntegerField()
+    offer = models.BooleanField(default=False)
+
